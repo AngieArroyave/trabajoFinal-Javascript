@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../assets/images/comidaDominicana-fondoAzul.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+h1 {
+    color: #6200ea;
+    font-weight:900;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ff4081;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    z-index: 1000;
+    
+}
+
+nav a.active {
+    color:#6200ea;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+a:hover {
+    transform: translateY(-5px) scale(1.10);
+}
+
+
+.logotipo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #6200ea;
+}
+
+
+.links-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.check-menu {
+    display: none;
+}
+
+.label-check {
+    display: none;
+}
+
+/****************** Nuestra Historia *********************/
+
+.titulo {
+    margin-top: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+    color: #6200ea;
+}
+
+.nuestra-historia {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    background-color: #ff6f00;
+    border-radius: 5%;
+    border: 1px solid #6200ea;
+}
+
+.presentacion-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 600px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.parrafo-historia {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto auto 0;
+    padding: 20px;
+}
+.noticias h2 {
+    color: #6200ea;
+    font-size: 5vh;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.noticias {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.botones button {
+  background:#00e676;
+  border: none;
+  color: #6200ea;
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.botones button:hover {
+  background: #93f5c6;
+}
+
+#contenedor-noticias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.noticia {
+  background: #f877a2;
+  border-radius: 12px;
+  border: 1px solid #6200ea;
+  padding: 15px;
+  box-shadow: 0 0 10px #0005;
+  transition: transform 0.2s;
+}
+
+.noticia:hover {
+  transform: scale(1.03);
+}
+
+.noticia h2 {
+  color: #6200ea;
+}
+
+.noticia small {
+  display: block;
+  margin-top: 10px;
+  color: #bbb;
+}
+
+.equipo {
+  text-align: center;
+  padding: 60px;
+}
+
+.equipo h3 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  color: #6200ea;
+}
+
+.contenedor-equipo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+}
+
+.miembro-equipo {
+  background-color: #ff6f00;
+  border-radius: 15px;
+  border: 1px solid #6200ea;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.miembro-equipo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.miembro-equipo img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.miembro-equipo p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.recomendaciones-chef {
+  text-align: center;
+  padding: 60px;
+}
+
+.recomendaciones-chef h3 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  color: #6200ea;
+}
+
+.recomendacion-dia {
+    display: flex;
+    flex-direction: column;
+    background-color: #00e676;
+    border-radius: 5%;
+    border: 1px solid #6200ea;
+}
+
+.plato-dia img {
+    width: 70%;
+    height: auto;
+    border-radius: 15%;
+    padding: 20px;
+}
+
+.parrafo-plato-dia {
+    margin-bottom: 30px;
+}
+
+
+/********************** Footer ***************************/
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    background-color: #ffd500;
+}
+
+.derechos-reservados {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-redes-sociales {
+    padding: 20px;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.icono-redes{
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+
+.direccion {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+.direccion1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: small;
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.contacto1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+}
+
+.contacto img {
+    width: 20px;
+    height: 20px;
+
+}
+
+.contacto .contacto1 img {
+    margin-right: 5px;
+}
+
+/********************** Nuestra Carta *******************************/
+
+
+.text {
+    position: fixed;
+    top: 50vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 8vw;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-100%);
+    z-index: 2;
+    color: #6200ea;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #6200ea;
+    z-index: -2;
+}
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #6200ea;
+    z-index: 2;
+}
+
+.filter-text {
+    mix-blend-mode: screen;
+    color: #804691;
+    z-index: 2;
+}
+
+.galeria {
+    padding-top: 20vh;
+    position: relative;
+    width: 100%;
+    max-width: 100vh;
+    margin: 0 auto;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(20, 2%);
+    grid-template-rows: repeat(20, 3%);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.content_slide-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+img .foodMenu {
+    width: 30vw;
+    height: 20vh;
+    position: relative;
+}
+
+.img1 {
+    grid-area: 2/3/6/8;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 5%;
+    border: 2px solid #6200ea;
+}
+
+.img2 {
+    grid-area: 6/12/10/30;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 5%;
+    border: 2px solid #6200ea;
+}
+
+.img3 {
+    grid-area: 9/5/13/15;
+    width: 50vw;
+    height: 40vh;
+    border-radius: 5%;
+    border: 2px solid #6200ea;
+}
+
+.img4 {
+    grid-area: 14/1/18/8;
+    width: 50vw;
+    height: 50vh;
+
+}
+
+.img5 {
+    grid-area: 16/12/20/19;
+    width: 50vw;
+    height: 40vh;
+    
+}
+
+.img6 {
+    grid-area: 20/2/25/9;
+    width: 50vw;
+    height: 40vh;
+     border-radius: 5%;
+    border: 2px solid #6200ea;
+    
+}
+
+.img7 {
+    grid-area: 22/11/24/20;
+    width: 50vw;
+    height: 40vh;
+    border-radius: 5%;
+    border: 2px solid #6200ea;
+}
+
+.img8 {
+    grid-area: 26/5/30/15;
+    width: 50vw;
+    height: 30vh;
+    border-radius: 5%;
+    border: 2px solid #6200ea;
+}
+
+.img10 {
+    grid-area: 33/10/37/25;
+    width: 40vw;
+    height: 40vh;
+    border-radius: 5%;
+    border: 2px solid #6200ea;
+}
+
+.carta-pdf {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 400px;
+    background-color: #ffd500;
+
+}
+
+.carta-pdf a {
+    text-decoration: underline;
+}
+
+#wrapper {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    overflow: visible;
+    width: 100%;
+}
+
+
+/************* Página Domicilio y Formulario ******************************/
+
+.formulario-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 50px auto;
+    border: 1px solid #6200ea;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #00e676;
+}
+
+.titulo-formulario {
+    text-align: center;
+    font-style: oblique;
+    font-size: 5vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #6200ea;
+}
+
+.form, .formPresupuesto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.input-contenedor, .plazos{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-contenedor input {
+    padding: 10px
+}
+
+.input-contenedor textarea {
+    padding: 10px;
+    resize: none;
+}
+
+.seleccion, .seleccionPlazo {
+    width: 100%;
+    height: auto;
+}
+
+.button-contenedor {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.button-reset, .button-carrito, .button-presupuesto, .button-resetPresupuesto {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.button-contenedor button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.reset, #añadir-al-carrito, .enviar-presupuesto, .borrar-presupuesto {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.privacity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.total {
+    display: flex;
+    margin-top: 10px;
+}
+
+.read {
+    font-size: small;
+    text-decoration: underline;
+    color: #6200ea;
+}
+
+.valido {
+    border-color: green;
+}
+
+.invalido {
+    border-color: red;
+}
+
+.error{
+    color: red;
+}
+
+.formulario-container2 {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 50px auto;
+    border: 1px solid #6200ea;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #00e676;
+    align-items: center;
+    justify-items: center;
+}
+
+.extras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+/*********************** Página de Contacto *******************************/
+
+
+.titulo-contacto {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 50px auto;
+}
+
+.tituloMap {
+    text-align: center;
+    font-style: oblique;
+    font-size: 5vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #6200ea;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: auto;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.map{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 600px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    z-index: 1;
+}
+
+.datos-contacto {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 700px;
+    height: auto;
+    background-color: #00e676;
+    border-radius: 5%;
+    border: 1px solid #6200ea;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 50px auto;
+}
+
+.datos-contacto1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.bolder {
+    font-style: italic;
+    font-weight:520;
+}
+
+.datos-contacto2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/************** Para moviles ***************/
+
+@media (max-width: 768px) {
+
+    nav {
+        height: 30vh;
+    }
+
+    .links-navbar a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        transition: all .3s ease;
+    }
+    .label-check {
+        display: block;
+    }
+
+    .links-navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        gap: 0;
+        background-color:#00e676;
+    }
+
+    .links-navbar a:hover{
+        transform: translateX(8px) scaleY(1.40);
+    }
+
+    .menu-hamburguesa {
+        width: 60px;
+        height: 60px;
+    }
+
+    .check-menu:checked + .links-navbar{
+        display: flex;
+    }
+}
+
+
+

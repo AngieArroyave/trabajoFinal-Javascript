@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante Comida Dominicna</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"
+      defer
+    ></script>
+    <script src="../js/carta.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="../index.html"
+          ><img
+            class="logotipo"
+            src="../assets/images/logotipo-ElGrandePicalonga.png"
+            alt="Logotipo del restaurante El grande Picalonga con ciudad de fondo y bandera de República dominicana"
+        /></a>
+        <h1>El Grande Picalonga</h1>
+        <input type="checkbox" id="check-menu" class="check-menu" />
+        <div class="links-navbar">
+          <a href="../index.html">Inicio</a>
+          <a href="#" class="active">Nuestra Carta</a>
+          <a href="./domicilio.html">Haz Tu Pedido</a>
+          <a href="./contacto.html">Contacta Con Nosotros</a>
+        </div>
+        <label for="check-menu" class="label-check">
+          <img
+            class="menu-hamburguesa"
+            src="../assets/images/galeria/menu-svgrepo-com.svg"
+            alt="menu hamburguesa"
+            width="800"
+            height="800"
+          />
+        </label>
+      </nav>
+    </header>
+    <main>
+      <!-- Galeria imágenes de plaatos -->
+      <h2 class="text">Nuestra Gastronomía</h2>
+      <h2 aria-hidden="true" class="text outline-text">Nuestra Gastronomía</h2>
+      <h2 aria-hidden="true" class="text filter-text">Nuestra Gastronomía</h2>
+      <div id="wrapper">
+        <div id="content">
+          <div class="galeria">
+            <img
+              data-speed="0.8"
+              class="foodMenu img1"
+              src="../assets/images/galeria/bolon.webp"
+              alt="Bolón de platano macho con chicharrón"
+            />
+            <img
+              data-speed="0.9"
+              class="foodMenu img2"
+              src="../assets/images/galeria/empanada.webp"
+              alt="Plato dominicano empanada"
+            />
+            <img
+              data-speed="1"
+              class="foodMenu img3"
+              src="../assets/images/galeria/espaghetis.webp"
+              alt="Espaguethis con carne y queso"
+            />
+            <img
+              data-speed="1,1"
+              class="foodMenu img4"
+              src="../assets/images/galeria/fritada.webp"
+              alt="Fritada de varias carnes"
+            />
+            <img
+              data-speed="0.9"
+              class="foodMenu img5"
+              src="../assets/images/galeria/fritadaCompleta.webp"
+              alt="Fritada de varias carnes con chorizo"
+            />
+            <img
+              data-speed="1.2"
+              class="foodMenu img6"
+              src="../assets/images/galeria/hamburguesaCarnemechada.webp"
+              alt="Hamburguesa con carne mechada"
+            />
+            <img
+              data-speed="0.8"
+              class="foodMenu img7"
+              src="../assets/images/galeria/pescadoCoco.webp"
+              alt="Pescado frito con salsa de coco"
+            />
+            <img
+              data-speed="1"
+              class="foodMenu img8"
+              src="../assets/images/galeria/pescadoFrito.webp"
+              alt="Pescado frito acompañado de plátano macho frito, arroz y ensalda"
+            />
+            <img
+              data-speed="0.9"
+              class="foodMenu img10"
+              src="../assets/images/galeria/platoGandulesArroz.webp"
+              alt="Arroz con gandules acompañados con carne"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Footer Nuestra Carta-->
+    <footer>
+      <div class="derechos-reservados">
+        <p>Todos los derechos reservados.</p>
+      </div>
+      <div class="direccion">
+        <p class="direccion1">
+          El Grande Picalonga, Centro Comercial La Farga Planta 2,<br />
+          Av. de Josep Tarradellas i Joan, 08901 <br />
+          L'Hospitalet de Llobregat.
+        </p>
+        <div class="contacto">
+          <div class="contacto1">
+            <img
+              src="../assets/images/reloj.png"
+              alt="icono de reloj"
+              width="512"
+              height="512"
+            /><span>Lunes a Domingo: 12h - 23:30H</span>
+          </div>
+          <div class="contacto1">
+            <img
+              src="../assets/images/movil.png"
+              alt="icono de movil"
+              width="512"
+              height="512"
+            /><span>614375536</span>
+          </div>
+          <div class="contacto1">
+            <img
+              src="../assets/images/email.png"
+              alt="icono email"
+              width="512"
+              height="512"
+            /><span>elgrandepicalonga@hotmail.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="redes-sociales">
+        <h3 class="titulo-redes-sociales">Síguenos en redes sociales</h3>
+        <a
+          href="https://www.instagram.com/reel/C4AJOMRIpqf/?igsh=d2VidjNud3BvYjFj"
+          ><img
+            class="icono-redes"
+            src="../assets/images/instagram.png"
+            alt="icono de instagram"
+            width="512"
+            height="512"
+        /></a>
+        <a href="https://www.tiktok.com"
+          ><img
+            class="icono-redes"
+            src="../assets/images/tiktok.png"
+            alt="icono de tiktok"
+            width="512"
+            height="512"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>

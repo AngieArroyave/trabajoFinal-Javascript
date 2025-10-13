@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante de comida Dominicana</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/noticias.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#"
+          ><img
+            class="logotipo"
+            src="./assets/images/logotipo-ElGrandePicalonga.png"
+            alt="Logotipo del restaurante El grande Picalonga con ciudad de fondo y bandera de Repúnlica dominicana"
+        /></a>
+        <h1>El Grande Picalonga</h1>
+        <input type="checkbox" id="check-menu" class="check-menu" />
+        <div class="links-navbar">
+          <a href="#" class="active">Inicio</a>
+          <a href="./views/carta.html">Nuestra Carta</a>
+          <a href="./views/domicilio.html">Haz Tu Pedido</a>
+          <a href="./views/contacto.html">Contacta Con Nosotros</a>
+        </div>
+        <label for="check-menu" class="label-check">
+          <img
+            class="menu-hamburguesa"
+            src="./assets/images/galeria/menu-svgrepo-com.svg"
+            alt="menu hamburguesa"
+            width="800"
+            height="800"
+          />
+        </label>
+      </nav>
+    </header>
+    <main>
+      <!--- Nuestra Historia -->
+      <section>
+        <div class="nuestra-historia">
+          <h2 class="titulo">Nuestra <br />Historia</h2>
+          <div class="presentacion-container" id="presentacion-container">
+            <p class="parrafo-historia">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+              ab animi deleniti fuga, ex maxime quam commodi culpa laborum
+              officia quisquam dolorum blanditiis neque quia, omnis repudiandae
+              rerum cupiditate tempore! Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Mollitia repudiandae dignissimos iure quis
+              magnam sunt quos sit cum delectus dolorum ipsum ducimus,
+              doloremque corrupti blanditiis hic enim, praesentium molestias
+              esse. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Ab aspernatur numquam quo,
+              harum hic quia non distinctio. Nostrum id esse culpa iste! Enim
+              illo ut eaque similique hic necessitatibus omnis.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Sección Noticias -->
+      <section class="noticias">
+        <h2>Nuestra Sección de Noticias</h2>
+        <div class="botones">
+          <button id="btn-local">Cargar Noticias Locales</button>
+          <button id="btn-api">Cargar API Externa</button>
+          <div id="contenedor-noticias"></div>
+        </div>
+      </section>
+      <!-- Seccion nuestro equipo -->
+      <section class="equipo">
+        <h3>Nuestro Equipo</h3>
+        <div class="contenedor-equipo">
+          <div class="miembro-equipo">
+            <img
+              src="./assets/imagenes-equipo/mujer-directora-restaurante.webp"
+              alt="Santa Gómez, directora general del restaurante"
+            />
+            <p>
+              <strong>Santa Gómez:</strong> Directora general. <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+              aliquid asperiores nisi? Perferendis aut tempora dolorem debitis
+              expedita dolores corporis voluptatem.
+            </p>
+          </div>
+
+          <div class="miembro-equipo">
+            <img
+              src="./assets/imagenes-equipo/directora-comercial.webp"
+              alt="Katherine López, directora comercial"
+            />
+            <p>
+              <strong>Katherine López:</strong> Directora Comercial. <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              odit, maiores saepe alias quas magnam cumque.
+            </p>
+          </div>
+
+          <div class="miembro-equipo">
+            <img
+              src="./assets/imagenes-equipo/jefe-cocina-chef.webp"
+              alt="Emmanuel Rodríguez, jefe de cocina"
+            />
+            <p>
+              <strong>Emmanuel Rodríguez:</strong> Director de cocina - Chef.
+              <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, sint.
+              Illum ad perspiciatis placeat laborum.
+            </p>
+          </div>
+
+          <div class="miembro-equipo">
+            <img
+              src="./assets/imagenes-equipo/equipo-sala-cocina.webp"
+              alt="Equipo de cocina y sala del restaurante"
+            />
+            <p>
+              <strong
+                >Francisca, Sebastián, Elizabeth, Alexander y María:</strong
+              >
+              <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              iste illum deserunt harum et incidunt maxime facere ducimus vitae
+              mollitia.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Seccion Recomendaciones del chef -->
+      <section class="recomendaciones-chef">
+        <div class="recomendacion-dia">
+          <h3>Recomendaciones De Nuestro Chef</h3>
+          <div class="plato-dia">
+            <img
+              src="./assets/images/galeria/pescadoCoco.webp"
+              alt="Plato del dia recomendado: Pescado con coco."
+            />
+            <p class="parrafo-plato-dia">
+              <strong>Plato del dia:</strong><br />
+              Nuestro delicioso pescado con coco.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!---  Footer. -->
+    <footer>
+      <div class="derechos-reservados">
+        <p>Todos los derechos reservados.</p>
+      </div>
+      <div class="direccion">
+        <p class="direccion1">
+          El Grande Picalonga, Centro Comercial La Farga Planta 2,<br />
+          Av. de Josep Tarradellas i Joan, 08901 <br />
+          L'Hospitalet de Llobregat.
+        </p>
+        <div class="contacto">
+          <div class="contacto1">
+            <img
+              src="./assets/images/reloj.png"
+              alt="icono de reloj"
+              width="512"
+              height="512"
+            /><span>Lunes a Domingo: 12h - 23:30H</span>
+          </div>
+          <div class="contacto1">
+            <img
+              src="./assets/images/movil.png"
+              alt="icono de movil"
+              width="512"
+              height="512"
+            /><span>614375536</span>
+          </div>
+          <div class="contacto1">
+            <img
+              src="./assets/images/email.png"
+              alt="icono email"
+              width="512"
+              height="512"
+            /><span>elgrandepicalonga@hotmail.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="redes-sociales">
+        <h3 class="titulo-redes-sociales">Síguenos en redes sociales</h3>
+        <a
+          href="https://www.instagram.com/reel/C4AJOMRIpqf/?igsh=d2VidjNud3BvYjFj"
+          ><img
+            class="icono-redes"
+            src="./assets/images/instagram.png"
+            alt="icono de instagram"
+            width="512"
+            height="512"
+        /></a>
+        <a href="https://www.tiktok.com"
+          ><img
+            class="icono-redes"
+            src="./assets/images/tiktok.png"
+            alt="icono de tiktok"
+            width="512"
+            height="512"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>
