@@ -3,7 +3,7 @@
 // === CARGAR DESDE ARCHIVO LOCAL ===
 async function cargarNoticiasLocal() {
   try {
-    const res = await fetch("./data/noticias.json");
+    const res = await fetch("data/noticias.json");
     const noticias = await res.json();
     mostrarNoticias(noticias);
   } catch (error) {
