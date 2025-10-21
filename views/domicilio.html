@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Restaurante Comida Dominicana</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" >
     <script src="../js/domicilio.js" defer></script>
   </head>
   <body>
@@ -15,9 +15,9 @@
             class="logotipo"
             src="../assets/images/logotipo-ElGrandePicalonga.png"
             alt="Logotipo del restaurante El grande Picalonga con ciudad de fondo y bandera de Repúnlica dominicana"
-        /></a>
+        ></a>
         <h1>El Grande Picalonga</h1>
-        <input type="checkbox" id="check-menu" class="check-menu" />
+        <input type="checkbox" id="check-menu" class="check-menu" >
         <div class="links-navbar">
           <a href="../index.html">Inicio</a>
           <a href="./carta.html">Nuestra Carta</a>
@@ -31,7 +31,7 @@
             alt="menu hamburguesa"
             width="800"
             height="800"
-          />
+          >
         </label>
       </nav>
     </header>
@@ -39,151 +39,92 @@
       <!-- Formulario de Contacto -->
       <h2 class="titulo-formulario">Contacta Con Nosotros</h2>
       <div class="formulario-container">
-        <form class="form" id="formulario" action="#">
-          <div class="input-contenedor">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" />
-            <span class="error" id="nombreError"></span>
-          </div>
-          <div class="input-contenedor">
-            <label for="apellido">Apellido:</label>
-            <input type="text" name="apellido" id="apellido" />
-            <span class="error" id="apellidoError"></span>
-          </div>
-          <div class="input-contenedor">
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" name="telefono" id="telefono" />
-            <span class="error" id="telefonoError"></span>
-          </div>
-          <div class="input-contenedor">
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" name="email" id="email" />
-            <span class="error" id="emailError"></span>
-          </div>
-          <div class="input-contenedor">
-            <label for="mensaje">Mensaje:</label>
-            <textarea name="mensaje" id="mensaje" rows="5"></textarea>
-            <span class="error" id="mensajeError"></span>
-          </div>
-          <div class="privacity">
-            <input
-              type="checkbox"
-              required
-              name="privacity"
-              value="si"
-              id="privacity"
-            />
-            <label for="privacity"
-              ><a href="#" class="read"
-                >Lee y acepta la polítca de privacidad</a
-              ></label
-            >
-          </div>
-          <div class="button-contenedor">
-            <button type="submit">Enviar Formulario</button>
-          </div>
-          <div class="button-reset">
-            <button type="reset" class="reset" id="reset">Borrar Datos</button>
-          </div>
-        </form>
-      </div>
-      <!--- Formulario de pedido --->
-      <h2 class="titulo-formulario">Haz Tu Pedido</h2>
-      <div class="formulario-container2">
-        <form class="formPresupuesto" id="formPresupuesto" action="#">
-          <div class="input-contenedor">
-            <label for="seleccion-producto">Selecciona un producto</label>
-            <select
-              class="seleccion"
-              name="seleccion-producto"
-              id="seleccion-producto"
-            >
-              <option value="producto1:10" data-precio="10">
-                Producto 1 - 10€
-              </option>
-              <option value="producto2:20" data-precio="20">
-                Producto 2 - 20€
-              </option>
-              <option value="producto3:30" data-precio="30">
-                Producto 3 - 30€
-              </option>
-              <option value="producto4:40" data-precio="40">
-                Producto 4 - 40€
-              </option>
-              <option value="producto5:50" data-precio="50">
-                Producto 5 - 50€
-              </option>
-            </select>
-          </div>
-          <div class="cajita-cantidad">
-            <label for="cantidad">Cantidad</label>
-            <input type="number" id="cantidad" min="1" value="1" />
-          </div>
-          <div class="plazos">
-            <h3>Plazos</h3>
-            <label for="selccion-plazo">Horas de entrega:</label>
-            <select
-              class="seleccionPlazo"
-              name="seleccion-plazo"
-              id="seleccion-plazo"
-            >
-              <option value="inmediato" data-descuento="0">
-                Inmediato(45' max.) 0% descuento
-              </option>
-              <option value="2-horas" data-descuento="10">
-                2 Horas 10% descuento
-              </option>
-              <option value="siguiente" data-descuento="15">
-                Dia Siguiente 15% descuento
-              </option>
-            </select>
-            <h3>Extras</h3>
-            <div class="extras">
-              <label for="extra-patacones">Extra de Patacones: 5€</label>
-              <input
-                type="checkbox"
-                name="extra-patacones"
-                class="extra-patacones"
-                id="extra-patacones"
-              />
-              <label for="extra-arepas">Extra de Arepas: 6€</label>
-              <input
-                type="checkbox"
-                name="extra-arepas"
-                class="extra-arepas"
-                id="extra-arepas"
-              />
-              <label for="extra-yucas">Extra de Yucas: 8€</label>
-              <input
-                type="checkbox"
-                name="extra-yucas"
-                class="extra-yucas"
-                id="extra-yucas"
-              />
-            </div>
-          </div>
-          <div class="carrito" id="contenedor-carrito">
-            <h3>🛒 Carrito:</h3>
-            <ul id="carrito"></ul>
-            <div class="total">
-              <p id="total-final">Total: 0€</p>
-            </div>
-            <div class="button-carrito">
-              <button id="añadir-al-carrito">Añadir al carrito</button>
-            </div>
-            <div class="button-presupuesto">
-              <button type="submit" class="enviar-presupuesto">
-                Enviar Pedido
-              </button>
-            </div>
-            <div class="button-resetPresupuesto">
-              <button type="reset" class="borrar-presupuesto">
-                Borrar Datos
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
+      <form class="form" id="formulario-unico" action="#">
+        <!-- DATOS PERSONALES -->
+        <h3>Datos Personales</h3>
+        <div class="input-contenedor">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required >
+          <span class="error" id="nombreError"></span>
+        </div>
+
+        <div class="input-contenedor">
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" required >
+          <span class="error" id="apellidoError"></span>
+        </div>
+
+        <div class="input-contenedor">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required >
+          <span class="error" id="telefonoError"></span>
+        </div>
+
+        <div class="input-contenedor">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required >
+          <span class="error" id="emailError"></span>
+        </div>
+
+        <!-- MENSAJE -->
+        <div class="input-contenedor">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <span class="error" id="mensajeError"></span>
+        </div>
+
+        <!-- SECCIÓN DE PEDIDO -->
+        <h3>Tu Pedido</h3>
+        <div class="input-contenedor">
+          <label for="seleccion-producto">Selecciona un producto:</label>
+          <select id="seleccion-producto" name="producto" required>
+            <option value="" disabled selected>-- Selecciona --</option>
+            <option value="producto1" data-precio="10">Producto 1 - 10€</option>
+            <option value="producto2" data-precio="20">Producto 2 - 20€</option>
+            <option value="producto3" data-precio="30">Producto 3 - 30€</option>
+            <option value="producto4" data-precio="40">Producto 4 - 40€</option>
+            <option value="producto5" data-precio="50">Producto 5 - 50€</option>
+          </select>
+          <span class="error" id="productoError"></span>
+        </div>
+
+        <div class="input-contenedor">
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" min="1" value="1" required>
+        </div>
+
+        <div class="input-contenedor">
+          <label for="seleccion-plazo">Plazo de entrega:</label>
+          <select id="seleccion-plazo" name="seleccion-plazo" multiple>
+            <option value="inmediato" data-descuento="0" selected>Inmediato (45' máx.)</option>
+            <option value="2-horas" data-descuento="10">2 horas -10% desc.</option>
+            <option value="siguiente" data-descuento="15">Día siguiente -15% desc.</option>
+          </select>
+        </div>
+
+        <div class="extras">
+          <label><input type="checkbox" id="extra-patacones"> Extra de Patacones (+5€)</label>
+          <label><input type="checkbox" id="extra-arepas"> Extra de Arepas (+6€)</label>
+          <label><input type="checkbox" id="extra-yucas"> Extra de Yucas (+8€)</label>
+        </div>
+
+        <div class="total">
+          <p id="total-final">Total: 0€</p>
+        </div>
+
+        <div class="privacity">
+          <input type="checkbox" id="privacity" required >
+          <label for="privacity">Acepto la <a href="#" class="read">política de privacidad</a></label>
+        </div>
+
+        <div class="button-contenedor">
+          <button type="submit">Enviar Pedido</button>
+        </div>
+        <div class="button-reset">
+          <button type="reset" id="reset">Borrar Datos</button>
+        </div>
+      </form>
+    </div>
     </main>
     <!-- Footer -->
     <footer>
@@ -192,8 +133,8 @@
       </div>
       <div class="direccion">
         <p class="direccion1">
-          El Grande Picalonga, Centro Comercial La Farga Planta 2,<br />
-          Av. de Josep Tarradellas i Joan, 08901 <br />
+          El Grande Picalonga, Centro Comercial La Farga Planta 2,<br>
+          Av. de Josep Tarradellas i Joan, 08901 <br>
           L'Hospitalet de Llobregat.
         </p>
         <div class="contacto">
@@ -203,7 +144,7 @@
               alt="icono de reloj"
               width="512"
               height="512"
-            /><span>Lunes a Domingo: 12h - 23:30H</span>
+            ><span>Lunes a Domingo: 12h - 23:30H</span>
           </div>
           <div class="contacto1">
             <img
@@ -211,7 +152,7 @@
               alt="icono de movil"
               width="512"
               height="512"
-            /><span>614375536</span>
+            ><span>614375536</span>
           </div>
           <div class="contacto1">
             <img
@@ -219,7 +160,7 @@
               alt="icono email"
               width="512"
               height="512"
-            /><span>elgrandepicalonga@hotmail.com</span>
+            ><span>elgrandepicalonga@hotmail.com</span>
           </div>
         </div>
       </div>
@@ -233,7 +174,7 @@
             alt="icono de instagram"
             width="512"
             height="512"
-        /></a>
+        ></a>
         <a href="https://www.tiktok.com"
           ><img
             class="icono-redes"
@@ -241,7 +182,7 @@
             alt="icono de tiktok"
             width="512"
             height="512"
-        /></a>
+        ></a>
       </div>
     </footer>
   </body>
