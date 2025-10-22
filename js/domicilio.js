@@ -1,162 +1,127 @@
 /* =========== Formulario de contacto ========*/
 
-const nombreInput = document.getElementById('nombre');
-const apellidoInput = document.getElementById('apellido');
-const telefonoInput = document.getElementById('telefono');
-const emailInput = document.getElementById('email');
-const mensajeInput = document.getElementById('mensaje');
-const formulario = document.getElementById('formulario');
+const formulario = document.getElementById("formulario-unico");
 
+const campos = {
+  nombre: document.getElementById("nombre"),
+  apellido: document.getElementById("apellido"),
+  telefono: document.getElementById("telefono"),
+  email: document.getElementById("email"),
+  mensaje: document.getElementById("mensaje"),
+  producto: document.getElementById("seleccion-producto"),
+  cantidad: document.getElementById("cantidad"),
+  plazo: document.getElementById("seleccion-plazo"),
+};
 
-function validarNombre() {
-    const nombre = nombreInput.value;
-    const nombrePattern = /^[a-zA-Z]*$/
-    if (nombre.length <= 10 && nombrePattern.test(nombre)) {
-        nombreInput.classList.add('valido');
-        nombreInput.classList.remove('invalido');
-        document.getElementById('nombreError').textContent = '';
+const totalFinal = document.getElementById("total-final");
 
-    }else {
-        nombreInput.classList.add('invalido');
-        nombreInput.classList.remove('valido');
-        document.getElementById('nombreError').textContent = 'El nombre de usuario debe tener como máximo 10 carácteres y empezar con una letra';
-    }
-}
+// ======== VALIDACIONES ========
 
-function validarApellido() {
-    const apellido = apellidoInput.value;
-    const apellidoPattern = /^[a-zA-Z]*$/
-    if (apellido.length <= 15 && apellidoPattern.test(apellido)) {
-        apellidoInput.classList.add('valido');
-        apellidoInput.classList.remove('invalido');
-        document.getElementById('apellidoError').textContent = '';
-
-    }else {
-        apellidoInput.classList.add('invalido');
-        apellidoInput.classList.remove('valido');
-        document.getElementById('apellidoError').textContent = 'El apellido debe tener como máximo 15 carácteres y empezar con una letra';
-    }
+function validarTexto(campo, max, idError) {
+  const valor = campo.value.trim();
+  const pattern = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ.,\s!?]+$/;
+  if (valor.length > 0 && valor.length <= max && pattern.test(valor)) {
+    campo.classList.add("valido");
+    campo.classList.remove("invalido");
+    document.getElementById(idError).textContent = "";
+    return true;
+  } else {
+    campo.classList.add("invalido");
+    campo.classList.remove("valido");
+    document.getElementById(idError).textContent = "Ingrese un texto válido.";
+    return false;
+  }
 }
 
 function validarTelefono() {
-    const telefono = telefonoInput.value;
-    const telefonoPattern = /^\d{9}$/
-    if (telefonoPattern.test(telefono)) {
-        telefonoInput.classList.add('valido');
-        telefonoInput.classList.remove('invalido');
-        document.getElementById('telefonoError').textContent = '';
-
-    }else {
-        telefonoInput.classList.add('invalido');
-        telefonoInput.classList.remove('valido');
-        document.getElementById('telefonoError').textContent = 'El teléfono debe tener 9 dígitos y contener solo números.'
-    }
+  const valor = campos.telefono.value.trim();
+  const pattern = /^\d{9}$/;
+  if (pattern.test(valor)) {
+    campos.telefono.classList.add("valido");
+    campos.telefono.classList.remove("invalido");
+    telefonoError.textContent = "";
+    return true;
+  } else {
+    campos.telefono.classList.add("invalido");
+    campos.telefono.classList.remove("valido");
+    telefonoError.textContent = "El teléfono debe tener 9 dígitos.";
+    return false;
+  }
 }
 
 function validarEmail() {
-    const email = emailInput.value;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (emailPattern.test(email)) {
-        emailInput.classList.add('valido');
-        emailInput.classList.remove('invalido');
-        document.getElementById('emailError').textContent = '';
-
-    }else {
-        emailInput.classList.add('invalido');
-        emailInput.classList.remove('valido');
-        document.getElementById('emailError').textContent = 'Ingrese un correo electrónico válido.'
-    }
+  const valor = campos.email.value.trim();
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (pattern.test(valor)) {
+    campos.email.classList.add("valido");
+    campos.email.classList.remove("invalido");
+    emailError.textContent = "";
+    return true;
+  } else {
+    campos.email.classList.add("invalido");
+    campos.email.classList.remove("valido");
+    emailError.textContent = "Email inválido.";
+    return false;
+  }
 }
 
-function validarMensaje() {
-     const mensaje = mensajeInput.value;
-     const mensajePattern = /^[a-zA-Z][a-zA-Z0-9]*$/
-    if (mensaje.length >= 20 || mensajePattern.test(mensaje)) {
-        mensajeInput.classList.add('valido');
-        mensajeInput.classList.remove('invalido');
-        document.getElementById('mensajeError').textContent = '';
+// ======== CÁLCULO DEL PEDIDO ========
 
-    }else {
-        mensajeInput.classList.add('invalido');
-        mensajeInput.classList.remove('valido');
-        document.getElementById('mensajeError').textContent = 'Ingrese mensaje de texto válido y al menos 20 carácteres.'
-    }
-}
+function calcularTotal() {
+  const producto = campos.producto.options[campos.producto.selectedIndex];
+  const precio = parseFloat(producto.dataset.precio || 0);
+  const cantidad = parseInt(campos.cantidad.value) || 1;
 
-function resetFormulario (){
-    formulario.reset();
-    nombreInput.classList.remove('valido');
-    apellidoInput.classList.remove('valido');
-    telefonoInput.classList.remove('valido');
-    emailInput.classList.remove('valido');
-    mensajeInput.classList.remove('valido');
-};
+  let extras = 0;
+  if (document.getElementById("extra-patacones").checked) extras += 5;
+  if (document.getElementById("extra-arepas").checked) extras += 6;
+  if (document.getElementById("extra-yucas").checked) extras += 8;
 
+  const descuento = parseFloat(campos.plazo.options[campos.plazo.selectedIndex].dataset.descuento);
 
-nombreInput.addEventListener('input', validarNombre);
-apellidoInput.addEventListener('input', validarApellido);
-telefonoInput.addEventListener('input', validarTelefono);
-emailInput.addEventListener('input', validarEmail);
-mensajeInput.addEventListener('input', validarMensaje);
-
-formulario.addEventListener('submit', function(event){
-    event.preventDefault();
-    validarNombre();
-    validarApellido();
-    validarTelefono();
-    validarEmail();
-    validarMensaje();
-
-    if(nombreInput.classList.contains('valido') && apellidoInput.classList.contains('valido') && telefonoInput.classList.contains('valido') && emailInput.classList.contains('valido') && mensajeInput.classList.contains('valido')){
-        alert ('Formulario enviado correctamente.')
-    }else {
-        alert ('Por favor, rellena los campos correctamente, fíjate en los parámetros que te pasamos.')
-    }
-});
-
-/* ============= Formulario Presupuesto =========== */
-    
-const form = document.getElementById('formPresupuesto');
-const carritoUl = document.getElementById('carrito');
-const totalFinal = document.getElementById('total-final');
-const btnAñadir = document.getElementById('añadir-al-carrito');
-
-btnAñadir.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  // Obtener datos del producto
-  const productoSelect = document.getElementById('seleccion-producto');
-  const productoNombre = productoSelect.options[productoSelect.selectedIndex].text;
-  const productoPrecio = parseFloat(productoSelect.options[productoSelect.selectedIndex].dataset.precio);
-
-  // Cantidad
-  const cantidad = parseInt(document.getElementById('cantidad').value);
-
-  // Extras
-  let extrasTotal = 0;
-  if(document.getElementById('extra-patacones').checked) extrasTotal += 5;
-  if(document.getElementById('extra-arepas').checked) extrasTotal += 6;
-  if(document.getElementById('extra-yucas').checked) extrasTotal += 8;
-
-  // Plazo
-  const plazoSelect = document.getElementById('seleccion-plazo');
-  const descuento = parseFloat(plazoSelect.options[plazoSelect.selectedIndex].dataset.descuento);
-
-  // Calcular total
-  let subtotal = (productoPrecio * cantidad) + extrasTotal;
+  let subtotal = (precio * cantidad) + extras;
   let total = subtotal - (subtotal * descuento / 100);
 
-  // Añadir al carrito visualmente
-  const li = document.createElement('li');
-  li.textContent = `${productoNombre} x${cantidad} + extras: ${extrasTotal}€ - Total: ${total.toFixed(2)}€`;
-  carritoUl.appendChild(li);
-
-  // Actualizar total general
   totalFinal.textContent = `Total: ${total.toFixed(2)}€`;
+}
+
+campos.producto.addEventListener("change", calcularTotal);
+campos.cantidad.addEventListener("input", calcularTotal);
+campos.plazo.addEventListener("change", calcularTotal);
+document.querySelectorAll(".extras input").forEach(c => c.addEventListener("change", calcularTotal));
+
+campos.nombre.addEventListener("input", () => validarTexto(campos.nombre, 15, "nombreError"));
+campos.apellido.addEventListener("input", () => validarTexto(campos.apellido, 20, "apellidoError"));
+campos.mensaje.addEventListener("input", () => validarTexto(campos.mensaje, 300, "mensajeError", 10));
+campos.telefono.addEventListener("input", validarTelefono);
+campos.email.addEventListener("input", validarEmail);
+
+// ======== ENVÍO ========
+
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const valido =
+    validarTexto(campos.nombre, 15, "nombreError") &&
+    validarTexto(campos.apellido, 20, "apellidoError") &&
+    validarTelefono() &&
+    validarEmail() &&
+    validarTexto(campos.mensaje, 300, "mensajeError", 10) && campos.producto.value !== "";
+
+  if (valido) {
+    alert("Formulario enviado correctamente 🍔🍺");
+    formulario.reset();
+    totalFinal.textContent = "Total: 0€";
+    
+    Object.values(campos).forEach(campo => campo.classList.remove("valido", "invalido"));
+  } else {
+    alert("Por favor, revisa los campos marcados en rojo.");
+  }
 });
 
-// Resetear carrito al limpiar el formulario
-form.addEventListener('reset', () => {
-  carritoUl.innerHTML = '';
-  totalFinal.textContent = 'Total: 0€';
-});
+
+   
+
+    
+   
+    
